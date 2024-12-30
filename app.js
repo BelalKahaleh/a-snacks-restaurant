@@ -26,6 +26,16 @@
 // }
 
 // console.log("hello " + name +" " +"your " + order + " will be prepared");
+// ex3
+let arr=[name,gen,order];
+for(i=0;i<=3;i++){
+    console.log(arr[i]);
+}
+
+let g=function (gen){
+    return gen;
+}
+g(gen);
 
 
 
