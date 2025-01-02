@@ -1,122 +1,73 @@
-// //question 1
-// let name = window.prompt("enter your name");
-// // let gen = window.prompt("enter your gender (male or female?)");
+const form = document.getElementById("userForm");
 
-// //name and gender
-// if(gen == "male"){
-//     window.alert("welcome MR."+ name);
-// }
-// else if(gen =="female"){
-//     window.alert("welcome Ms."+ name);
-// }
-// else{
-//     window.alert("welcome "+ name);
-// }
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent the default form submission
 
-// //order
-// let order = window.prompt("what do you want ? shawarma, zinger, or burger?");
-// if(order == "shawarma"){
-//     window.alert("your order is being prepared");
-// }
-// else if(order =="zinger"){
-//     window.alert("your order is being prepared");
-// }
-// else if (order =="burger"){
-//     window.alert("your order is being prepared");
-// }
+  const name = document.getElementById("username").value;
+  const age = document.getElementById("age").value;
+  const gen = document.getElementById("gender").value;
+  const order = document.querySelector('input[name="order"]:checked')?.value;
 
-// console.log("hello " + name +" " +"your " + order + " will be prepared");
-// ex3
-let arr=[name,gen,order];
-for(i=0;i<=3;i++){
-    console.log(arr[i]);
-}
+  if (!name || !age || gen === "Select" || !order) {
+    alert("Please fill out all fields correctly.");
+    return;
+  }
 
-let g=function (gen){
-    return gen;
-}
-g(gen);
+  const parentElement = document.getElementById("parentDiv");
+  parentElement.textContent = `Name: ${name}, Age: ${age}, Gender: ${gen} your order: ${order}` ;
 
 
 
-// x = prompt("enter a number");
-// parseInt(x);
-// if(x==1){
-//     console.log("one");
-// }
-// else if(x==2){
-//     console.log("two");
-// }
-// else if(x==3){
-//     console.log("three");
-// }
-// else if(x==4){
-//     console.log("four");
-// }
-// else if(x==5){
-//     console.log("five");
-// }
-// else if(x==6){
-//     console.log("six");
-// }
-// else if(x==7){
-//     console.log("seven");
-// }
-// else if(x==8){
-//     console.log("eight");
-// }
-// else if(x==9){
-//     console.log("nine");
-// }
-// else{
-//     console.log("PLEASE TRY AGAIN")
-// }
+  const listContainer = document.getElementById("list-container");
+  listContainer.innerHTML = ""; 
+  listContainer.appendChild(orderedList);
+
+  console.log(`Name: ${name}`);
+  console.log(`Age: ${age}`);
+  console.log(`gender: ${gen}`);
+  console.log(`Order: ${order}`);
+});
 
 
-//question 2
 
 
-//q1
-// let gen = window.prompt("enter your gender (male or female?)");
-
-// while(true){
-//     // window.prompt("enter you gender in correct way please (male or female)");
-//     if(gen == "male" || gen =="female"){
-//     console.log(gen);
-//     break;
-//     }
-//     else {
-//         console.log("invalid");
-//     }
-// }
 
 
-//q1
 
-// i=0;
-// while(i<=5){
-//     window.alert(i);
-//     i++;
-// }
 
-//q4
-// while (true){
-//     let num = window.prompt("enter number between 0 and 100");
-//     if(num>100 || num<0){
-//     alert("error number");
-// }
-//     else{
-//         alert(num);
-//         break;
-//     }
-// }
 
-//q5
-let num = window.prompt("enter a number");
-let sum=0;
 
-    for(let  i=0;i<=num;i++){
-        sum+=i;
-    }
-alert(sum);
-       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   const orderedList = document.createElement("ol");
+//   [
+//     "Name: " + name,
+//     "Age: " + age,
+//     "Gender: " + gen,
+//     "Order: " + order,
+//   ].forEach((item) => {
+//     const listItem = document.createElement("li");
+//     listItem.textContent = item;
+//     orderedList.appendChild(listItem);
+//   });
